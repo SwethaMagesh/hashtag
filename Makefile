@@ -1,4 +1,4 @@
-obj -m+= mod1.o
-obj -m+=driver.o
+obj-m	+=	mod1.o
+obj-m	+=	driver.o
 
 
