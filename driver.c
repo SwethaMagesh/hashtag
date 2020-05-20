@@ -5,26 +5,13 @@
 #include<linux/fs.h>
 
 #include<linux/string.h>
-#include<stdio.h>
-#include<stdlib.h>
 #include<asm/uaccess.h>
 
 MODULE_LICENSE("GPL");
 int lkm_open(struct inode * pinode, struct file * pfile) {
 
-  char pass[20],PASS[20]="devpass";
-  printf("Enter password");
-  scanf("%s",pass);
-  if(strcmp(pass,PASS)==0)
-  {
-      printk(KERN_ALERT "Authentication success !Device opened");
-
-  }
-  else
-  {
-     printk(KERN_ALERT "Dev cant be opened! Failed attempt");
-  }
-  //printk(KERN_ALERT "Device opened");
+ 
+  printk(KERN_ALERT "Device opened");
   return 0;
 }
 
@@ -40,7 +27,7 @@ ssize_t lkm_write(struct file * pfile,
 }
 
 int lkm_release(struct inode * pinode, struct file * pfile) {
-  printk(KERN_ALERT "device closed\n");
+  printk(KERN_ALERT "Device closed\n");
   return 0;
 }
 //structure containing device operation
@@ -55,15 +42,15 @@ static int hello_init(void) //init function to be called at the time of insmod
 {
   int t = register_chrdev(90, "mychr", & fops);
   if (t < 0)
-    printk(KERN_ALERT "device registration failed.");
+    printk(KERN_ALERT "Device registration failed.");
   else
-    printk(KERN_ALERT "device registred\n");
+    printk(KERN_ALERT "Device registred\n");
   return 0;
 }
 static void hello_exit(void) //exit function to be called at the time of rmmod
 {
   unregister_chrdev(90, "mychr");
-  printk(KERN_ALERT "exit");
+  printk(KERN_ALERT "Unregistered and Exited!");
 }
 
 module_init(hello_init);
