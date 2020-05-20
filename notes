@@ -1,1 +1,5 @@
 make	-C	/lib/modules/$(uname	-r)/build	M=$(PWD)	modules
+
+mknod -m 666 /dev/mydev c 90 1
+
+cat /proc/devices
