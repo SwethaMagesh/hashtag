@@ -1,3 +1,4 @@
+Microsoft codefundo project idea!
 Natural hazards are extreme natural events that can cause loss of life, extreme damage to property and disrupt human activities.
 
 Some natural hazards, such as flooding, can happen anywhere in the world. Other natural hazards, such as tornadoes, can only happen in specific areas. And some hazards need climaticor tectonic conditions to occur, for example tropical storms or volcanic eruptions.
